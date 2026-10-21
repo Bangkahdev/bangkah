@@ -62,7 +62,7 @@ export const CHAT = {
         },
         {
           label: "Fishing OS",
-          href: "https://github.com/Bangkahdev/Fishing-OS",
+          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
           external: true,
         },
       ],
@@ -75,8 +75,8 @@ export const CHAT = {
         "Fishing OS adalah live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: boot dari USB atau mesin virtual, lalu langsung dapat git, Docker, kubectl, Helm, Terraform, dan desktop XFCE tanpa instalasi. Rilisnya ditandatangani GPG.",
       links: [
         {
-          label: "Repo Fishing OS",
-          href: "https://github.com/Bangkahdev/Fishing-OS",
+          label: "Wiki Fishing OS",
+          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
           external: true,
         },
         {
@@ -99,7 +99,7 @@ export const CHAT = {
       id: "docs",
       label: "Di mana dokumentasinya?",
       answer:
-        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri. Fishing OS didokumentasikan lewat README dan halaman rilis di GitHub.",
+        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri. Fishing OS didokumentasikan di wiki GitHub, dengan unduhan di halaman rilis.",
       links: [
         { label: "atha.bangkah.tech", href: "https://atha.bangkah.tech", external: true },
         {
@@ -113,8 +113,8 @@ export const CHAT = {
           external: true,
         },
         {
-          label: "Fishing OS di GitHub",
-          href: "https://github.com/Bangkahdev/Fishing-OS",
+          label: "Wiki Fishing OS",
+          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
           external: true,
         },
       ],

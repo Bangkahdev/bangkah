@@ -56,8 +56,8 @@ export const projects = [
     no: "RAK 04",
     kind: "Sistem operasi",
     name: "Fishing OS",
-    url: "https://github.com/Bangkahdev/Fishing-OS",
-    display: "github.com/Bangkahdev/Fishing-OS",
+    url: "https://github.com/Bangkahdev/Fishing-OS/wiki",
+    display: "github.com/Bangkahdev/Fishing-OS/wiki",
     description:
       "Live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: git, Docker, kubectl, Terraform, dan desktop XFCE siap pakai dari USB.",
     tags: ["Arch Linux", "Live ISO", "GPG"],
