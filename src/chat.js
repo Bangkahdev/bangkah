@@ -1,8 +1,8 @@
 ﻿export const CHAT = {
   title: "Tanya Bangkah",
-  subtitle: "Jawaban siap pakai soal gudang dan project. Tanpa AI, tanpa tebakan.",
+  subtitle: "Jawaban siap pakai soal project dan pengelolanya. Tanpa AI, tanpa tebakan.",
   greeting:
-    "Halo. Pilih pertanyaan di bawah â€” semua jawaban sudah disiapkan dan ditinjau, bukan hasil tebakan mesin.",
+    "Halo. Pilih pertanyaan di bawah — semua jawaban sudah disiapkan dan ditinjau, bukan hasil tebakan mesin.",
   optionsLabel: "Pilih pertanyaan",
   followUpLabel: "Pertanyaan lanjutan",
   resetLabel: "Lihat semua pertanyaan",
@@ -12,12 +12,36 @@
     "Halo Atha,\n\nSaya ingin bertanya tentang bangkah.tech:\n\n\n\nHalaman yang saya buka: https://bangkah.tech",
   questions: [
     {
-      id: "apa",
-      label: "Apa itu Bangkah?",
+      id: "siapa",
+      label: "Siapa Bangkah?",
       answer:
-        "Bangkah adalah gudang project publik: dokumentasi dan alat untuk pengembang, disimpan rapi di rak subdomain bangkah.tech. Terbuka untuk siapa saja, tanpa akun dan tanpa paywall.",
-      links: [{ label: "Lihat gudang", href: "/#gudang" }],
-      related: ["project", "akun"],
+        "Bangkah adalah Muhammad Dhyaul Atha — pengembang di balik semua project di situs ini. Nama Bangkah dipakai sebagai identitas karyanya, sedangkan situs ini adalah wadah publiknya.",
+      links: [
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/muhammad-dhyaul-atha/",
+          external: true,
+        },
+        { label: "mdhiyaulatha.me", href: "https://mdhiyaulatha.me", external: true },
+        { label: "github.com/Bangkah", href: "https://github.com/Bangkah", external: true },
+      ],
+      related: ["pengelola", "project"],
+    },
+    {
+      id: "pengelola",
+      label: "Siapa pengelola project ini?",
+      answer:
+        "Pengelola project ini adalah Muhammad Dhyaul Atha, dari perakitan sampai rilis. Untuk urusan teknis, kerja sama, atau laporan bug, hubungi langsung melalui surel.",
+      links: [
+        { label: "atha@bangkah.tech", href: "mailto:atha@bangkah.tech" },
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/muhammad-dhyaul-atha/",
+          external: true,
+        },
+        { label: "mdhiyaulatha.me", href: "https://mdhiyaulatha.me", external: true },
+      ],
+      related: ["kontak", "bug"],
     },
     {
       id: "project",
@@ -43,7 +67,7 @@
       id: "akun",
       label: "Perlu akun atau bayar?",
       answer:
-        "Tidak. Semua halaman project bisa dibuka langsung â€” tanpa pendaftaran, langganan, atau paywall.",
+        "Tidak. Semua halaman project bisa dibuka langsung — tanpa pendaftaran, langganan, atau paywall.",
       links: [{ label: "Buka gudang", href: "/#gudang" }],
       related: ["project", "privasi"],
     },
@@ -73,7 +97,7 @@
       answer:
         "Rak keempat masih dirakit. Pengumuman selalu muncul di beranda lebih dulu, sebelum project naik rak.",
       links: [{ label: "Pantau beranda", href: "/#gudang" }],
-      related: ["project", "teknologi"],
+      related: ["project", "siapa"],
     },
     {
       id: "bug",
@@ -84,15 +108,7 @@
         { label: "atha@bangkah.tech", href: "mailto:atha@bangkah.tech" },
         { label: "github.com/Bangkah", href: "https://github.com/Bangkah", external: true },
       ],
-      related: ["kontak", "teknologi"],
-    },
-    {
-      id: "teknologi",
-      label: "Situs ini dibuat dengan apa?",
-      answer:
-        "React dan Vite, di-prerender menjadi HTML statis saat build, lalu di-deploy ke Cloudflare Pages lewat GitHub Actions. Tidak ada basis data di balik halaman ini.",
-      links: [{ label: "Peta situs", href: "/peta-situs/" }],
-      related: ["privasi", "baru"],
+      related: ["kontak", "pengelola"],
     },
     {
       id: "privasi",
@@ -100,7 +116,7 @@
       answer:
         "Tidak ada cookie iklan, analitik, atau pelacakan pihak ketiga. Obrolan ini berjalan di browser dan tidak menyimpan riwayat ke server.",
       links: [{ label: "Kontak pengelola", href: "/#kontak" }],
-      related: ["teknologi", "kontak"],
+      related: ["siapa", "kontak"],
     },
     {
       id: "kontak",
@@ -109,11 +125,14 @@
         "Surel adalah kanal utama dan paling cepat dibaca. Kanal lain tersedia untuk melihat rekam jejak dan karya.",
       links: [
         { label: "atha@bangkah.tech", href: "mailto:atha@bangkah.tech" },
-        { label: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-dhyaul-atha/", external: true },
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/muhammad-dhyaul-atha/",
+          external: true,
+        },
         { label: "mdhiyaulatha.me", href: "https://mdhiyaulatha.me", external: true },
       ],
-      related: ["bug", "privasi"],
+      related: ["pengelola", "bug"],
     },
   ],
 };
-
