@@ -27,7 +27,7 @@ export default function Footer() {
               <li><a href="#gudang">Gudang</a></li>
               <li><a href="#cara-kerja">Cara kerja</a></li>
               <li><a href="#kontak">Kontak</a></li>
-              <li><a href="/sitemap.xml">Peta situs</a></li>
+              <li><a href="/peta-situs/">Peta situs</a></li>
             </ul>
           </nav>
 

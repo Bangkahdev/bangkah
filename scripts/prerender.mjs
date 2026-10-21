@@ -34,8 +34,15 @@ function inject(target, { head, html }) {
 const index = inject(shell, mod.render());
 const notFound = inject(shell, mod.render404());
 
+const staticShell = shell
+  .replace(/\s*<script type="module"[^>]*><\/script>/g, "")
+  .replace(/\s*<link rel="modulepreload"[^>]*>/g, "");
+const sitemapPage = inject(staticShell, mod.renderSitemap());
+
 await writeFile(path.join(ROOT, "dist/index.html"), index, "utf8");
 await writeFile(path.join(ROOT, "dist/404.html"), notFound, "utf8");
+await mkdir(path.join(ROOT, "dist/peta-situs"), { recursive: true });
+await writeFile(path.join(ROOT, "dist/peta-situs/index.html"), sitemapPage, "utf8");
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -46,9 +53,15 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://bangkah.tech/peta-situs/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
 `;
 await writeFile(path.join(ROOT, "dist/sitemap.xml"), sitemap, "utf8");
 
 const bytes = Buffer.byteLength(index, "utf8");
-console.log(`prerender: dist/index.html (${(bytes / 1024).toFixed(1)} KB) + dist/404.html + sitemap.xml`);
+console.log(`prerender: dist/index.html (${(bytes / 1024).toFixed(1)} KB) + dist/404.html + dist/peta-situs + sitemap.xml`);

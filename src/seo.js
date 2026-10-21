@@ -100,6 +100,53 @@ export function headHtml() {
   ].join("\n");
 }
 
+export function headSitemapHtml() {
+  const url = `${SITE.url}peta-situs/`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#page`,
+        url,
+        name: "Peta Situs — Bangkah",
+        description: "Daftar semua halaman dan project publik Bangkah.",
+        inLanguage: "id-ID",
+        isPartOf: { "@id": `${SITE.url}#website` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Beranda", item: SITE.url },
+          { "@type": "ListItem", position: 2, name: "Peta Situs", item: url },
+        ],
+      },
+    ],
+  };
+
+  return [
+    `<title>Peta Situs — Bangkah</title>`,
+    `<meta name="description" content="Daftar semua halaman dan project publik Bangkah di bangkah.tech.">`,
+    `<meta name="robots" content="index, follow">`,
+    `<meta name="author" content="${SITE.owner.name}">`,
+    `<meta name="theme-color" content="#f2ede1">`,
+    `<link rel="canonical" href="${url}">`,
+    `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
+    `<meta property="og:type" content="website">`,
+    `<meta property="og:site_name" content="${SITE.name}">`,
+    `<meta property="og:locale" content="${SITE.locale}">`,
+    `<meta property="og:url" content="${url}">`,
+    `<meta property="og:title" content="Peta Situs — Bangkah">`,
+    `<meta property="og:description" content="Daftar semua halaman dan project publik Bangkah.">`,
+    `<meta property="og:image" content="${SITE.ogImage}">`,
+    `<link rel="preconnect" href="https://fonts.googleapis.com">`,
+    `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
+    `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
+    `<script type="application/ld+json">${JSON.stringify(data)}</script>`,
+  ].join("\n");
+}
+
 export function head404Html() {
   return [
     `<title>Rak kosong — Bangkah</title>`,
