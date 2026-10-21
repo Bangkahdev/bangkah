@@ -1,4 +1,4 @@
-﻿export const CHAT = {
+export const CHAT = {
   title: "Tanya Bangkah",
   subtitle: "Jawaban siap pakai soal project dan pengelolanya. Tanpa AI, tanpa tebakan.",
   greeting:
@@ -47,7 +47,7 @@
       id: "project",
       label: "Project apa saja yang ada?",
       answer:
-        "Saat ini ada tiga rak terisi dan satu masih dirakit: dokumentasi ATHA, dokumentasi Bangkah Launcher, dan situs dokumentasi Bangk-Shield.",
+        "Saat ini ada empat rak terisi dan satu masih dirakit: dokumentasi ATHA, dokumentasi Bangkah Launcher, situs dokumentasi Bangk-Shield, dan Fishing OS — live/rescue ISO untuk pengembang.",
       links: [
         { label: "ATHA Docs", href: "https://atha.bangkah.tech", external: true },
         {
@@ -60,8 +60,32 @@
           href: "https://bangk-shield.bangkah.tech",
           external: true,
         },
+        {
+          label: "Fishing OS",
+          href: "https://github.com/Bangkahdev/Fishing-OS",
+          external: true,
+        },
       ],
-      related: ["docs", "baru"],
+      related: ["fishing", "docs"],
+    },
+    {
+      id: "fishing",
+      label: "Apa itu Fishing OS?",
+      answer:
+        "Fishing OS adalah live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: boot dari USB atau mesin virtual, lalu langsung dapat git, Docker, kubectl, Helm, Terraform, dan desktop XFCE tanpa instalasi. Rilisnya ditandatangani GPG.",
+      links: [
+        {
+          label: "Repo Fishing OS",
+          href: "https://github.com/Bangkahdev/Fishing-OS",
+          external: true,
+        },
+        {
+          label: "Rilis terbaru",
+          href: "https://github.com/Bangkahdev/Fishing-OS/releases/latest",
+          external: true,
+        },
+      ],
+      related: ["project", "docs"],
     },
     {
       id: "akun",
@@ -75,7 +99,7 @@
       id: "docs",
       label: "Di mana dokumentasinya?",
       answer:
-        "Setiap project punya situs dokumentasinya sendiri, jadi tidak perlu mencari di satu halaman panjang.",
+        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri. Fishing OS didokumentasikan lewat README dan halaman rilis di GitHub.",
       links: [
         { label: "atha.bangkah.tech", href: "https://atha.bangkah.tech", external: true },
         {
@@ -86,6 +110,11 @@
         {
           label: "bangk-shield.bangkah.tech",
           href: "https://bangk-shield.bangkah.tech",
+          external: true,
+        },
+        {
+          label: "Fishing OS di GitHub",
+          href: "https://github.com/Bangkahdev/Fishing-OS",
           external: true,
         },
       ],

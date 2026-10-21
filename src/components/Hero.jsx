@@ -1,4 +1,4 @@
-import { SITE } from "../data.js";
+import { SITE, projects } from "../data.js";
 
 export default function Hero() {
   return (
@@ -35,7 +35,7 @@ export default function Hero() {
             <dt>Domain</dt>
             <dd>bangkah.tech</dd>
             <dt>Isi rak</dt>
-            <dd>3 project publik</dd>
+            <dd>{projects.length} project publik</dd>
             <dt>Akses</dt>
             <dd>Terbuka untuk publik</dd>
             <dt>Kontak</dt>

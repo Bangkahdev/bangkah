@@ -39,7 +39,7 @@ export default function Projects() {
           Isi <em>gudang</em>
         </h2>
         <p>Setiap rak punya alamat sendiri. Buka langsung, tidak perlu tanda tangan.</p>
-        <span className="count">3 rak</span>
+        <span className="count">{projects.length} rak</span>
       </div>
 
       <div className="grid">
@@ -49,7 +49,7 @@ export default function Projects() {
 
         <div className="card card--empty">
           <div className="card__top">
-            <span className="card__no">RAK 04</span>
+            <span className="card__no">{`RAK ${String(projects.length + 1).padStart(2, "0")}`}</span>
             <span className="card__kind">Kosong</span>
           </div>
           <div className="card__body">

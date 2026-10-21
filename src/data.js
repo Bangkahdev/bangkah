@@ -12,7 +12,7 @@ export const SITE = {
   },
   title: "Bangkah — Gudang Project Publik | bangkah.tech",
   description:
-    "Gudang project publik Bangkah: dokumentasi dan alat untuk pengembang. Jelajahi ATHA Docs, Bangkah Launcher, dan Bangk-Shield dalam satu domain.",
+    "Gudang project publik Bangkah: dokumentasi dan alat untuk pengembang. Jelajahi ATHA Docs, Bangkah Launcher, Bangk-Shield, dan Fishing OS dalam satu domain.",
   ogImage: "https://bangkah.tech/og.png",
   locale: "id_ID",
   lang: "id",
@@ -52,10 +52,21 @@ export const projects = [
     tags: ["Dokumentasi", "Keamanan", "Edge"],
     theme: "c",
   },
+  {
+    no: "RAK 04",
+    kind: "Sistem operasi",
+    name: "Fishing OS",
+    url: "https://github.com/Bangkahdev/Fishing-OS",
+    display: "github.com/Bangkahdev/Fishing-OS",
+    description:
+      "Live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: git, Docker, kubectl, Terraform, dan desktop XFCE siap pakai dari USB.",
+    tags: ["Arch Linux", "Live ISO", "GPG"],
+    theme: "d",
+  },
 ];
 
 export const stats = [
-  { value: "03", label: "Rak publik" },
+  { value: "04", label: "Rak publik" },
   { value: "06", label: "Titik online" },
   { value: "01", label: "Pintu masuk" },
   { value: "24/7", label: "Jam operasional" },
