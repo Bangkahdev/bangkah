@@ -1,5 +1,22 @@
 {
   "name": "bangkah-hub",
   "private": true,
-  "version": "1.0.0"
+  "version": "2.0.0",
+  "type": "module",
+  "description": "bangkah.tech — gudang project publik Bangkah (React + Vite, prerendered)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name bangkah-hub --branch main"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "esbuild": "^0.28.2",
+    "vite": "^8.3.4"
+  }
 }
