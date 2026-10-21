@@ -1,72 +1,29 @@
 # bangkah.tech
 
-Situs gudang project publik **Bangkah** — satu domain, banyak rak.
+Gudang project publik **Bangkah** — satu domain, banyak rak.
 
-Dibangun dengan **React 19 + Vite**, di-prerender ke HTML statis saat build (agar SEO dan First Paint tetap bagus tanpa JavaScript), bergaya neo-brutalism, dan di-deploy otomatis ke Cloudflare Pages lewat GitHub Actions.
+Situs ini bukan portfolio pribadi dan bukan toko. Ini tempat semua project publik Bangkah disimpan, dirapikan, dan dibuka untuk siapa saja. Tidak perlu akun, tidak ada paywall.
 
-## Stack
+## Isi gudang
 
-| Bagian | Teknologi |
-|---|---|
-| UI | React 19 (komponen di `src/components/`) |
-| Build | Vite 8 |
-| Prerender | `scripts/prerender.mjs` — React `renderToString` → `dist/index.html` + `dist/404.html` |
-| Hosting | Cloudflare Pages (`bangkah-hub`) |
-| CI/CD | GitHub Actions (`.github/workflows/deploy.yml`) |
+| Rak | Project | Apa itu |
+|---|---|---|
+| 01 | [ATHA Docs](https://atha.bangkah.tech) | Panduan alur kerja paket Arch yang lebih aman: build, tanda tangan, sampai rilis |
+| 02 | [Bangkah Launcher](https://bangkah-launcher.bangkah.tech) | Dokumentasi starter kit Laravel modern yang siap dipakai |
+| 03 | [Bangk-Shield](https://bangk-shield.bangkah.tech) | Perisai edge untuk melindungi project Bangkah |
+| 04 | *Sedang dirakit* | Rak berikutnya, masih dikerjakan di lantai pabrik |
 
-## Struktur
+Setiap project punya subdomainnya sendiri, jadi alamatnya mudah diingat dan bisa dibuka langsung.
 
-```
-src/
-  App.jsx            komposisi halaman
-  main.jsx           entry client (hydrateRoot)
-  entry-server.jsx   entry SSR/prerender
-  seo.js             title, meta, Open Graph, JSON-LD
-  data.js            daftar project, statistik, langkah
-  styles.css         neo-brutalism
-  components/        Ticker, Header, Hero, Stats, Projects, Process, Contact, Footer
-public/
-  favicon.svg  og.png  robots.txt  _headers
-scripts/prerender.mjs
-```
+## Cara kerja
 
-## Perintah
+Project tidak muncul tiba-tiba di rak. Semua lewat alur yang sama: **dirakit**, **diuji**, lalu **naik rak** saat sudah siap dipakai publik.
 
-```bash
-npm install
-npm run dev        # server lokal
-npm run build      # vite build + prerender → dist/
-npm run preview    # cek hasil build
-npm run deploy     # build + deploy manual ke Cloudflare Pages
-```
+## Kontak
 
-## SEO
+Pertanyaan, laporan bug, atau ajakan kolaborasi: **atha@bangkah.tech**
 
-- HTML hasil prerender sudah berisi seluruh konten (tidak bergantung JS untuk diindeks)
-- Title, description, canonical, `hreflang`, robots lengkap
-- Open Graph + Twitter Card dengan `og.png` 1200×630
-- JSON-LD: `WebSite`, `Organization`, `CollectionPage`, `ItemList`
-- `sitemap.xml` dibuat saat build, `robots.txt` statis
-- HTML semantik: satu `h1`, hierarki heading, skip-link, `lang="id"`
-- 404 dengan `noindex`
+## Tautan
 
-## CI/CD
-
-Setiap push ke `main` (dan `workflow_dispatch`) menjalankan:
-
-1. `npm ci` + `npm run build` (termasuk prerender)
-2. Upload artefak `dist`
-3. Deploy ke Cloudflare Pages project `bangkah-hub` (production branch `main`)
-
-Pull request hanya menjalankan build, tanpa deploy.
-
-Secret yang dibutuhkan (Settings → Secrets and variables → Actions):
-
-| Secret | Isi |
-|---|---|
-| `CLOUDFLARE_API_TOKEN` | Token dengan permission **Cloudflare Pages: Edit** untuk akun ini |
-| `CLOUDFLARE_ACCOUNT_ID` | ID akun Cloudflare |
-
-## Lisensi
-
-Kode boleh dipelajari dan diambil inspirasinya. Nama, logo, dan isi konten tetap milik Bangkah.
+- Situs: <https://bangkah.tech>
+- Peta situs: <https://bangkah.tech/sitemap.xml>
