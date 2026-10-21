@@ -12,7 +12,7 @@ export const SITE = {
   },
   title: "Bangkah — Gudang Project Publik | bangkah.tech",
   description:
-    "Gudang project publik Bangkah: dokumentasi dan alat untuk pengembang. Jelajahi ATHA Docs, Bangkah Launcher, Bangk-Shield, dan Fishing OS dalam satu domain.",
+    "Gudang project publik Bangkah: dokumentasi dan alat untuk pengembang. Jelajahi ATHA Docs, Bangkah Launcher, Bangk-Shield, Fishing OS, DevOpsGen, Muslim Life, dan netinfo dalam satu domain.",
   ogImage: "https://bangkah.tech/og.png",
   locale: "id_ID",
   lang: "id",
@@ -63,10 +63,43 @@ export const projects = [
     tags: ["Arch Linux", "Live ISO", "GPG"],
     theme: "d",
   },
+  {
+    no: "RAK 05",
+    kind: "CLI",
+    name: "DevOpsGen",
+    url: "https://github.com/Bangkahdev/DevOpsGen",
+    display: "github.com/Bangkahdev/DevOpsGen",
+    description:
+      "CLI scaffolding DevOps: menghasilkan Dockerfile, workflow GitHub Actions, dan manifest Kubernetes yang deterministik dari konfigurasi kecil.",
+    tags: ["Go", "CLI", "CI/CD"],
+    theme: "e",
+  },
+  {
+    no: "RAK 06",
+    kind: "Aplikasi web",
+    name: "Muslim Life",
+    url: "https://muslim-life.vercel.app",
+    display: "muslim-life.vercel.app",
+    description:
+      "Aplikasi Muslim harian: baca dan dengar Al-Quran, jadwal shalat sesuai lokasi, doa harian, asmaul husna, dan arah kiblat.",
+    tags: ["PWA", "Al-Quran", "React"],
+    theme: "f",
+  },
+  {
+    no: "RAK 07",
+    kind: "Paket AUR",
+    name: "netinfo",
+    url: "https://aur.archlinux.org/packages/netinfo",
+    display: "aur.archlinux.org/packages/netinfo",
+    description:
+      "Paket AUR untuk menampilkan informasi jaringan dan sistem — IP publik, ASN, ISP, dan detail koneksi lain lewat satu perintah.",
+    tags: ["Arch", "AUR", "CLI"],
+    theme: "g",
+  },
 ];
 
 export const stats = [
-  { value: "04", label: "Rak publik" },
+  { value: "07", label: "Rak publik" },
   { value: "06", label: "Titik online" },
   { value: "01", label: "Pintu masuk" },
   { value: "24/7", label: "Jam operasional" },

@@ -47,7 +47,7 @@ export const CHAT = {
       id: "project",
       label: "Project apa saja yang ada?",
       answer:
-        "Saat ini ada empat rak terisi dan satu masih dirakit: dokumentasi ATHA, dokumentasi Bangkah Launcher, situs dokumentasi Bangk-Shield, dan Fishing OS — live/rescue ISO untuk pengembang.",
+        "Saat ini ada tujuh rak terisi dan satu masih dirakit: dokumentasi ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, DevOpsGen, Muslim Life, dan netinfo.",
       links: [
         { label: "ATHA Docs", href: "https://atha.bangkah.tech", external: true },
         {
@@ -63,6 +63,21 @@ export const CHAT = {
         {
           label: "Fishing OS",
           href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
+          external: true,
+        },
+        {
+          label: "DevOpsGen",
+          href: "https://github.com/Bangkahdev/DevOpsGen",
+          external: true,
+        },
+        {
+          label: "Muslim Life",
+          href: "https://muslim-life.vercel.app",
+          external: true,
+        },
+        {
+          label: "netinfo",
+          href: "https://aur.archlinux.org/packages/netinfo",
           external: true,
         },
       ],
@@ -99,7 +114,7 @@ export const CHAT = {
       id: "docs",
       label: "Di mana dokumentasinya?",
       answer:
-        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri. Fishing OS didokumentasikan di wiki GitHub, dengan unduhan di halaman rilis.",
+        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri; Fishing OS ada di wiki. DevOpsGen dan netinfo didokumentasikan lewat README di repo masing-masing, sedangkan Muslim Life adalah aplikasi langsung pakai.",
       links: [
         { label: "atha.bangkah.tech", href: "https://atha.bangkah.tech", external: true },
         {
@@ -115,6 +130,16 @@ export const CHAT = {
         {
           label: "Wiki Fishing OS",
           href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
+          external: true,
+        },
+        {
+          label: "DevOpsGen",
+          href: "https://github.com/Bangkahdev/DevOpsGen",
+          external: true,
+        },
+        {
+          label: "netinfo (AUR)",
+          href: "https://aur.archlinux.org/packages/netinfo",
           external: true,
         },
       ],

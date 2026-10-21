@@ -6,6 +6,9 @@
   --lime: #b6f36a;
   --pink: #ff8fb1;
   --blue: #8fc4ff;
+  --mint: #8fe3c0;
+  --orange: #ffb066;
+  --violet: #c9a7ff;
   --line: 3px solid var(--ink);
   --shadow: 8px 8px 0 var(--ink);
 }
@@ -100,6 +103,9 @@ a.card:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink)
 .card--b .card__top { background: var(--lime); }
 .card--c .card__top { background: var(--blue); }
 .card--d .card__top { background: var(--pink); }
+.card--e .card__top { background: var(--mint); }
+.card--f .card__top { background: var(--orange); }
+.card--g .card__top { background: var(--violet); }
 .card--empty .card__top { background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 10px, #e3ddcd 10px, #e3ddcd 20px); }
 .card__no { font-family: "Archivo Black", sans-serif; font-size: 15px; }
 .card__kind { margin-left: auto; border: 2px solid var(--ink); background: var(--card); padding: 2px 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
