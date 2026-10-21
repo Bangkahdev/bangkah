@@ -3,6 +3,13 @@ export const SITE = {
   domain: "bangkah.tech",
   url: "https://bangkah.tech/",
   email: "atha@bangkah.tech",
+  owner: {
+    name: "Muhammad Dhyaul Atha",
+    role: "Pengelola Bangkah",
+    github: "https://github.com/Bangkah",
+    linkedin: "https://www.linkedin.com/in/muhammad-dhyaul-atha/",
+    website: "https://mdhiyaulatha.me",
+  },
   title: "Bangkah — Gudang Project Publik | bangkah.tech",
   description:
     "Gudang project publik Bangkah: dokumentasi dan alat untuk pengembang. Jelajahi ATHA Docs, Bangkah Launcher, dan Bangk-Shield dalam satu domain.",
@@ -36,13 +43,13 @@ export const projects = [
   },
   {
     no: "RAK 03",
-    kind: "Alat",
+    kind: "Dokumentasi",
     name: "Bangk-Shield",
     url: "https://bangk-shield.bangkah.tech",
     display: "bangk-shield.bangkah.tech",
     description:
-      "Perisai edge untuk project Bangkah: dipasang di depan pintu gudang, bekerja sebelum permintaan masuk ke origin.",
-    tags: ["Keamanan", "Worker", "Edge"],
+      "Situs dokumentasi Bangk-Shield: cara memasang perisai edge di depan project, dari konfigurasi sampai pemakaian sehari-hari.",
+    tags: ["Dokumentasi", "Keamanan", "Edge"],
     theme: "c",
   },
 ];
