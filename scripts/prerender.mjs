@@ -63,5 +63,9 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 `;
 await writeFile(path.join(ROOT, "dist/sitemap.xml"), sitemap, "utf8");
 
+await writeFile(path.join(ROOT, "dist/feed.xml"), mod.atomFeed(), "utf8");
+await writeFile(path.join(ROOT, "dist/llms.txt"), mod.llmsText(), "utf8");
+await writeFile(path.join(ROOT, "dist/llms-full.txt"), mod.llmsFullText(), "utf8");
+
 const bytes = Buffer.byteLength(index, "utf8");
-console.log(`prerender: dist/index.html (${(bytes / 1024).toFixed(1)} KB) + dist/404.html + dist/peta-situs + sitemap.xml`);
+console.log(`prerender: dist/index.html (${(bytes / 1024).toFixed(1)} KB) + dist/404.html + dist/peta-situs + sitemap.xml + feed.xml + llms.txt`);

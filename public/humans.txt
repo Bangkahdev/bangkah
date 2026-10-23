@@ -1,0 +1,17 @@
+/* TEAM */
+Name: Muhammad Dhyaul Atha
+Role: Pengelola Bangkah
+Contact: atha@bangkah.tech
+GitHub: https://github.com/Bangkahdev
+LinkedIn: https://www.linkedin.com/in/muhammad-dhyaul-atha/
+Location: Indonesia
+
+/* SITE */
+Name: bangkah.tech
+Description: Gudang project publik Bangkah
+Language: id
+Standards: HTML5, CSS3, JavaScript
+Components: React, Vite
+Hosting: Cloudflare Pages
+Deploy: GitHub Actions
+Last update: 2026-10-23

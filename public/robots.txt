@@ -2,4 +2,30 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
+# Search crawlers
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://bangkah.tech/sitemap.xml
+
+# Feed: https://bangkah.tech/feed.xml
+# LLM index: https://bangkah.tech/llms.txt
+# Full archive: https://bangkah.tech/llms-full.txt

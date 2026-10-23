@@ -46,7 +46,13 @@ export default function Sitemap() {
             <h2>Berkas teknis</h2>
             <ul>
               <li><a href="/sitemap.xml">sitemap.xml</a> — daftar URL untuk mesin pencari</li>
+              <li><a href="/feed.xml">feed.xml</a> — feed Atom rak publik</li>
+              <li><a href="/llms.txt">llms.txt</a> — indeks ringkas untuk LLM</li>
+              <li><a href="/llms-full.txt">llms-full.txt</a> — arsip lengkap untuk LLM</li>
+              <li><a href="/site.webmanifest">site.webmanifest</a> — metadata aplikasi web</li>
+              <li><a href="/humans.txt">humans.txt</a> — kredit pengelola</li>
               <li><a href="/robots.txt">robots.txt</a> — aturan perayapan</li>
+              <li><a href="/.well-known/security.txt">security.txt</a> — kontak keamanan</li>
             </ul>
           </section>
 
