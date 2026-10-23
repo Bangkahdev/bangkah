@@ -135,9 +135,8 @@ export function headHtml() {
     `<meta name="twitter:url" content="${SITE.url}">`,
     `<meta name="twitter:image" content="${SITE.ogImage}">`,
     `<meta name="twitter:image:alt" content="Bangkah — pabrik dan gudang project publik di bangkah.tech">`,
-    `<link rel="preconnect" href="https://fonts.googleapis.com">`,
-    `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
-    `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
+    `<link rel="preload" href="/fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin>`,
+    `<link rel="preload" href="/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>`,
     `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`,
   ].join("\n");
 }
@@ -195,9 +194,8 @@ export function headSitemapHtml() {
     `<meta name="twitter:url" content="${url}">`,
     `<meta name="twitter:image" content="${SITE.ogImage}">`,
     `<meta name="twitter:image:alt" content="Bangkah — pabrik dan gudang project publik di bangkah.tech">`,
-    `<link rel="preconnect" href="https://fonts.googleapis.com">`,
-    `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
-    `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
+    `<link rel="preload" href="/fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin>`,
+    `<link rel="preload" href="/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>`,
     `<script type="application/ld+json">${JSON.stringify(data)}</script>`,
   ].join("\n");
 }
@@ -208,8 +206,7 @@ export function head404Html() {
     `<meta name="robots" content="noindex, follow">`,
     `<meta name="theme-color" content="#f2ede1">`,
     `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
-    `<link rel="preconnect" href="https://fonts.googleapis.com">`,
-    `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
-    `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
+    `<link rel="preload" href="/fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin>`,
+    `<link rel="preload" href="/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>`,
   ].join("\n");
 }
