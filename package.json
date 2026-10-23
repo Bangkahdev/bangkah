@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
+    "check:links": "node scripts/check-links.mjs",
     "deploy": "npm run build && wrangler pages deploy dist --project-name bangkah-hub --branch main"
   },
   "dependencies": {

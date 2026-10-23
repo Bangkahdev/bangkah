@@ -8,8 +8,8 @@ const mailto = `mailto:${SITE.email}?subject=${encodeURIComponent(
   CHAT.mailSubject
 )}&body=${encodeURIComponent(CHAT.mailBody)}`;
 
-export default function ChatBot() {
-  const [open, setOpen] = useState(false);
+export default function ChatBot({ defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen);
   const [active, setActive] = useState(null);
   const [thread, setThread] = useState([]);
   const bodyRef = useRef(null);
