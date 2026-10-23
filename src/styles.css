@@ -124,7 +124,7 @@ a.card:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--ink)
 .card--e .card__top { background: var(--mint); }
 .card--f .card__top { background: var(--orange); }
 .card--g .card__top { background: var(--violet); }
-.card--empty .card__top { background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 10px, #e3ddcd 10px, #e3ddcd 20px); }
+.card--empty .card__top { background: #eceae3; }
 .card__no { font-family: "Archivo Black", sans-serif; font-size: 15px; }
 .card__kind { margin-left: auto; border: 2px solid var(--ink); background: var(--card); padding: 2px 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .card__body { padding: 18px 16px 10px; flex: 1; }
