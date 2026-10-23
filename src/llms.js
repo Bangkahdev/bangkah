@@ -70,7 +70,8 @@ Situs pengelola: ${SITE.owner.website}
 ## Tentang gudang
 Bangkah adalah gudang project publik: dokumentasi, alat, dan catatan kerja untuk
 pengembang. Semua halaman dapat dibuka langsung tanpa pendaftaran, langganan,
-atau paywall. Tidak ada cookie iklan, analitik, atau pelacakan pihak ketiga.
+atau paywall. Tidak ada cookie iklan atau pelacakan pihak ketiga. Situs memakai
+Cloudflare Web Analytics yang tidak memasang cookie.
 
 ## Daftar project
 ${projectDetails}
