@@ -1,0 +1,30 @@
+name: Cek tautan
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Periksa tautan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Tautan lokal dan eksternal
+        run: npm run check:links
+      - name: Tautan produksi
+        if: github.event_name != 'pull_request'
+        run: node scripts/check-links.mjs --live
