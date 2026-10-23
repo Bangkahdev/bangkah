@@ -8,16 +8,16 @@ Situs ini bukan portfolio pribadi dan bukan toko. Ini tempat semua project publi
 
 | Rak | Project | Apa itu |
 |---|---|---|
-| 01 | [ATHA Docs](https://atha.bangkah.tech) | Panduan alur kerja paket Arch yang lebih aman: build, tanda tangan, sampai rilis |
-| 02 | [Bangkah Launcher](https://bangkah-launcher.bangkah.tech) | Dokumentasi starter kit Laravel modern yang siap dipakai |
-| 03 | [Bangk-Shield](https://bangk-shield.bangkah.tech) | Web dokumentasi Bangk-Shield: cara memasang dan memakai perisai edge |
-| 04 | [Fishing OS](https://github.com/Bangkahdev/Fishing-OS/wiki) | Live/rescue ISO berbasis Arch Linux untuk developer dan DevOps, dengan wiki, unduhan, dan rilis bertanda tangan GPG |
-| 05 | [DevOpsGen](https://github.com/Bangkahdev/DevOpsGen) | CLI scaffolding DevOps: Dockerfile, workflow GitHub Actions, dan manifest Kubernetes yang deterministik |
+| 01 | [Bangk-Shield](https://bangk-shield.bangkah.tech) | Web dokumentasi Bangk-Shield: cara memasang dan memakai perisai edge |
+| 02 | [Fishing OS](https://fishingos.bangkah.tech) | Live/rescue ISO berbasis Arch Linux untuk developer dan DevOps, dengan panduan, unduhan, dan rilis bertanda tangan GPG |
+| 03 | [DevOpsGen](https://devopsgen.bangkah.tech/) | CLI scaffolding DevOps: Dockerfile, workflow GitHub Actions, dan manifest Kubernetes yang deterministik |
+| 04 | [ATHA](https://atha.bangkah.tech) | Panduan alur kerja paket Arch yang lebih aman: build, tanda tangan, sampai rilis |
+| 05 | [Bangkah Launcher](https://bangkah-launcher.bangkah.tech) | Dokumentasi starter kit Laravel modern yang siap dipakai |
 | 06 | [Muslim Life](https://muslim-life.vercel.app) | Aplikasi Muslim harian: Al-Quran, jadwal shalat, doa harian, asmaul husna, dan arah kiblat |
 | 07 | [netinfo](https://aur.archlinux.org/packages/netinfo) | Paket AUR untuk menampilkan IP publik, ASN, ISP, dan informasi jaringan lain |
 | 08 | *Sedang dirakit* | Rak berikutnya, masih dikerjakan di lantai pabrik |
 
-Project dokumentasi punya subdomainnya sendiri. Fishing OS didokumentasikan di wiki GitHub, DevOpsGen dan netinfo lewat README repo, sementara Muslim Life adalah aplikasi yang bisa langsung dipakai.
+Project dokumentasi punya subdomainnya sendiri. ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, dan DevOpsGen punya situs sendiri; netinfo lewat README repo, sementara Muslim Life adalah aplikasi yang bisa langsung dipakai.
 
 ## Cara kerja
 

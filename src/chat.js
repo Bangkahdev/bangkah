@@ -1,3 +1,24 @@
+import { projects } from "./data.js";
+
+const projectNames =
+  projects.length > 1
+    ? `${projects.slice(0, -1).map((p) => p.name).join(", ")}, dan ${projects.at(-1).name}`
+    : projects[0]?.name;
+
+const projectLinks = projects.map((p) => ({
+  label: p.name,
+  href: p.url,
+  external: true,
+}));
+
+const docsLinks = projects
+  .filter((p) => p.kind !== "Aplikasi web")
+  .map((p) => ({
+    label: p.kind === "Paket AUR" ? `${p.name} (AUR)` : p.name,
+    href: p.url,
+    external: true,
+  }));
+
 export const CHAT = {
   title: "Tanya Bangkah",
   subtitle: "Jawaban siap pakai soal project dan pengelolanya. Tanpa AI, tanpa tebakan.",
@@ -46,52 +67,19 @@ export const CHAT = {
     {
       id: "project",
       label: "Project apa saja yang ada?",
-      answer:
-        "Saat ini ada tujuh rak terisi dan satu masih dirakit: dokumentasi ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, DevOpsGen, Muslim Life, dan netinfo.",
-      links: [
-        { label: "ATHA Docs", href: "https://atha.bangkah.tech", external: true },
-        {
-          label: "Bangkah Launcher",
-          href: "https://bangkah-launcher.bangkah.tech",
-          external: true,
-        },
-        {
-          label: "Bangk-Shield",
-          href: "https://bangk-shield.bangkah.tech",
-          external: true,
-        },
-        {
-          label: "Fishing OS",
-          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
-          external: true,
-        },
-        {
-          label: "DevOpsGen",
-          href: "https://devopsgen.bangkah.tech/",
-          external: true,
-        },
-        {
-          label: "Muslim Life",
-          href: "https://muslim-life.vercel.app",
-          external: true,
-        },
-        {
-          label: "netinfo",
-          href: "https://aur.archlinux.org/packages/netinfo",
-          external: true,
-        },
-      ],
+      answer: `Saat ini ada ${projects.length} rak terisi dan satu masih dirakit: ${projectNames}.`,
+      links: projectLinks,
       related: ["fishing", "docs"],
     },
     {
       id: "fishing",
       label: "Apa itu Fishing OS?",
       answer:
-        "Fishing OS adalah live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: boot dari USB atau mesin virtual, lalu langsung dapat git, Docker, kubectl, Helm, Terraform, dan desktop XFCE tanpa instalasi. Rilisnya ditandatangani GPG.",
+        "Fishing OS adalah live/rescue ISO berbasis Arch Linux untuk developer dan DevOps: boot dari USB atau mesin virtual, lalu langsung dapat git, Docker, kubectl, Helm, Terraform, dan desktop XFCE tanpa instalasi. Panduan dan unduhan ada di fishingos.bangkah.tech, dan rilisnya ditandatangani GPG.",
       links: [
         {
-          label: "Wiki Fishing OS",
-          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
+          label: "fishingos.bangkah.tech",
+          href: "https://fishingos.bangkah.tech",
           external: true,
         },
         {
@@ -114,42 +102,14 @@ export const CHAT = {
       id: "docs",
       label: "Di mana dokumentasinya?",
       answer:
-        "ATHA, Bangkah Launcher, dan Bangk-Shield punya situs dokumentasi sendiri; Fishing OS ada di wiki. DevOpsGen dan netinfo didokumentasikan lewat README di repo masing-masing, sedangkan Muslim Life adalah aplikasi langsung pakai.",
-      links: [
-        { label: "atha.bangkah.tech", href: "https://atha.bangkah.tech", external: true },
-        {
-          label: "bangkah-launcher.bangkah.tech",
-          href: "https://bangkah-launcher.bangkah.tech",
-          external: true,
-        },
-        {
-          label: "bangk-shield.bangkah.tech",
-          href: "https://bangk-shield.bangkah.tech",
-          external: true,
-        },
-        {
-          label: "Wiki Fishing OS",
-          href: "https://github.com/Bangkahdev/Fishing-OS/wiki",
-          external: true,
-        },
-        {
-          label: "DevOpsGen",
-          href: "https://devopsgen.bangkah.tech/",
-          external: true,
-        },
-        {
-          label: "netinfo (AUR)",
-          href: "https://aur.archlinux.org/packages/netinfo",
-          external: true,
-        },
-      ],
+        "ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, dan DevOpsGen punya situs dokumentasi sendiri. netinfo didokumentasikan lewat README repo, sedangkan Muslim Life adalah aplikasi langsung pakai.",
+      links: docsLinks,
       related: ["project", "bug"],
     },
     {
       id: "baru",
       label: "Ada project baru?",
-      answer:
-        "Rak keempat masih dirakit. Pengumuman selalu muncul di beranda lebih dulu, sebelum project naik rak.",
+      answer: `Rak ${String(projects.length + 1).padStart(2, "0")} masih dirakit. Pengumuman selalu muncul di beranda lebih dulu, sebelum project naik rak.`,
       links: [{ label: "Pantau beranda", href: "/#gudang" }],
       related: ["project", "siapa"],
     },

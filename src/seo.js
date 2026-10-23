@@ -1,5 +1,10 @@
 import { SITE, projects } from "./data.js";
 
+const keywords = SITE.keywords.join(", ");
+const shareTitle = "Bangkah — Gudang Project Publik & Alat Developer";
+const knowsAbout = [...new Set(projects.flatMap((p) => p.tags))];
+const updated = new Date().toISOString().slice(0, 10);
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -17,11 +22,18 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE.url}#organization`,
       name: SITE.name,
+      alternateName: SITE.domain,
       url: SITE.url,
-      logo: `${SITE.url}favicon.svg`,
+      description: SITE.description,
       email: SITE.email,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE.url}favicon.svg`,
+      },
+      image: `${SITE.url}og.png`,
       founder: { "@id": `${SITE.url}#owner` },
       sameAs: [SITE.owner.github, SITE.owner.linkedin, SITE.owner.website],
+      knowsAbout,
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "technical support",
@@ -34,9 +46,11 @@ const jsonLd = {
       "@id": `${SITE.url}#owner`,
       name: SITE.owner.name,
       jobTitle: SITE.owner.role,
+      description: `${SITE.owner.name} — ${SITE.owner.role} di ${SITE.name}.`,
       email: `mailto:${SITE.email}`,
       url: SITE.owner.website,
       sameAs: [SITE.owner.github, SITE.owner.linkedin, SITE.owner.website],
+      knowsAbout,
       worksFor: { "@id": `${SITE.url}#organization` },
     },
     {
@@ -44,9 +58,12 @@ const jsonLd = {
       "@id": `${SITE.url}#page`,
       url: SITE.url,
       name: "Gudang Project Publik",
+      description: SITE.description,
       isPartOf: { "@id": `${SITE.url}#website` },
       about: { "@id": `${SITE.url}#organization` },
       inLanguage: "id-ID",
+      keywords,
+      dateModified: updated,
       mainEntity: { "@id": `${SITE.url}#projects` },
     },
     {
@@ -58,9 +75,14 @@ const jsonLd = {
       itemListElement: projects.map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        name: p.name,
-        url: `${p.url}/`,
-        description: p.description,
+        item: {
+          "@type": "CreativeWork",
+          name: p.name,
+          url: p.url,
+          description: p.description,
+          keywords: p.tags.join(", "),
+          genre: p.kind,
+        },
       })),
     },
   ],
@@ -70,10 +92,13 @@ export function headHtml() {
   return [
     `<title>${SITE.title}</title>`,
     `<meta name="description" content="${SITE.description}">`,
+    `<meta name="keywords" content="${keywords}">`,
     `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">`,
     `<meta name="author" content="${SITE.owner.name}">`,
+    `<meta name="application-name" content="${SITE.name}">`,
     `<meta name="theme-color" content="#f2ede1">`,
     `<link rel="canonical" href="${SITE.url}">`,
+    `<link rel="sitemap" type="application/xml" title="Sitemap" href="${SITE.url}sitemap.xml">`,
     `<link rel="alternate" hreflang="id" href="${SITE.url}">`,
     `<link rel="alternate" hreflang="x-default" href="${SITE.url}">`,
     `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
@@ -82,17 +107,19 @@ export function headHtml() {
     `<meta property="og:site_name" content="${SITE.name}">`,
     `<meta property="og:locale" content="${SITE.locale}">`,
     `<meta property="og:url" content="${SITE.url}">`,
-    `<meta property="og:title" content="Bangkah — Gudang Project Publik">`,
-    `<meta property="og:description" content="Dokumentasi dan alat untuk pengembang, disimpan rapi di rak subdomain. Terbuka untuk publik, tanpa akun.">`,
+    `<meta property="og:title" content="${shareTitle}">`,
+    `<meta property="og:description" content="${SITE.description}">`,
     `<meta property="og:image" content="${SITE.ogImage}">`,
     `<meta property="og:image:type" content="image/png">`,
     `<meta property="og:image:width" content="1200">`,
     `<meta property="og:image:height" content="630">`,
     `<meta property="og:image:alt" content="Bangkah — pabrik dan gudang project publik di bangkah.tech">`,
     `<meta name="twitter:card" content="summary_large_image">`,
-    `<meta name="twitter:title" content="Bangkah — Gudang Project Publik">`,
-    `<meta name="twitter:description" content="Dokumentasi dan alat untuk pengembang, disimpan rapi di rak subdomain. Terbuka untuk publik, tanpa akun.">`,
+    `<meta name="twitter:title" content="${shareTitle}">`,
+    `<meta name="twitter:description" content="${SITE.description}">`,
+    `<meta name="twitter:url" content="${SITE.url}">`,
     `<meta name="twitter:image" content="${SITE.ogImage}">`,
+    `<meta name="twitter:image:alt" content="Bangkah — pabrik dan gudang project publik di bangkah.tech">`,
     `<link rel="preconnect" href="https://fonts.googleapis.com">`,
     `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
     `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
@@ -102,6 +129,8 @@ export function headHtml() {
 
 export function headSitemapHtml() {
   const url = `${SITE.url}peta-situs/`;
+  const sitemapKeywords =
+    "peta situs bangkah, daftar project bangkah, bangkah.tech, dokumentasi developer";
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -109,9 +138,12 @@ export function headSitemapHtml() {
         "@type": "WebPage",
         "@id": `${url}#page`,
         url,
-        name: "Peta Situs — Bangkah",
-        description: "Daftar semua halaman dan project publik Bangkah.",
+        name: "Peta Situs — Daftar Project & Halaman Bangkah",
+        description:
+          "Peta situs bangkah.tech: daftar semua halaman, project publik, dan berkas teknis Bangkah.",
         inLanguage: "id-ID",
+        keywords: sitemapKeywords,
+        dateModified: updated,
         isPartOf: { "@id": `${SITE.url}#website` },
       },
       {
@@ -126,20 +158,28 @@ export function headSitemapHtml() {
   };
 
   return [
-    `<title>Peta Situs — Bangkah</title>`,
-    `<meta name="description" content="Daftar semua halaman dan project publik Bangkah di bangkah.tech.">`,
+    `<title>Peta Situs — Daftar Project & Halaman Bangkah | bangkah.tech</title>`,
+    `<meta name="description" content="Peta situs bangkah.tech: daftar semua halaman, project publik, dan berkas teknis Bangkah — ATHA Docs, Fishing OS, DevOpsGen, dan lainnya.">`,
+    `<meta name="keywords" content="${sitemapKeywords}">`,
     `<meta name="robots" content="index, follow">`,
     `<meta name="author" content="${SITE.owner.name}">`,
     `<meta name="theme-color" content="#f2ede1">`,
     `<link rel="canonical" href="${url}">`,
+    `<link rel="sitemap" type="application/xml" title="Sitemap" href="${SITE.url}sitemap.xml">`,
     `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="${SITE.name}">`,
     `<meta property="og:locale" content="${SITE.locale}">`,
     `<meta property="og:url" content="${url}">`,
-    `<meta property="og:title" content="Peta Situs — Bangkah">`,
-    `<meta property="og:description" content="Daftar semua halaman dan project publik Bangkah.">`,
+    `<meta property="og:title" content="Peta Situs — Daftar Project & Halaman Bangkah">`,
+    `<meta property="og:description" content="Daftar semua halaman, project publik, dan berkas teknis Bangkah di bangkah.tech.">`,
     `<meta property="og:image" content="${SITE.ogImage}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="Peta Situs — Daftar Project & Halaman Bangkah">`,
+    `<meta name="twitter:description" content="Daftar semua halaman, project publik, dan berkas teknis Bangkah di bangkah.tech.">`,
+    `<meta name="twitter:url" content="${url}">`,
+    `<meta name="twitter:image" content="${SITE.ogImage}">`,
+    `<meta name="twitter:image:alt" content="Bangkah — pabrik dan gudang project publik di bangkah.tech">`,
     `<link rel="preconnect" href="https://fonts.googleapis.com">`,
     `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>`,
     `<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">`,
