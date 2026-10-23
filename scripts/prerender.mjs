@@ -1,5 +1,5 @@
 import { build } from "esbuild";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -23,7 +23,16 @@ await build({
 });
 
 const mod = await import(pathToFileURL(ENTRY).href);
-const shell = await readFile(path.join(ROOT, "dist/index.html"), "utf8");
+let shell = await readFile(path.join(ROOT, "dist/index.html"), "utf8");
+
+const assets = await readdir(path.join(ROOT, "dist/assets"));
+const cssFile = assets.find((file) => file.endsWith(".css"));
+if (!cssFile) throw new Error("prerender: CSS bundle tidak ditemukan");
+const css = await readFile(path.join(ROOT, "dist/assets", cssFile), "utf8");
+shell = shell.replace(
+  /<link rel="stylesheet"[^>]*>/,
+  `<style>${css}</style>`,
+);
 
 function inject(target, { head, html }) {
   return target

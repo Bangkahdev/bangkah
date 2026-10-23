@@ -7,7 +7,7 @@ import Process from "./components/Process.jsx";
 import Contact from "./components/Contact.jsx";
 import Faq from "./components/Faq.jsx";
 import Footer from "./components/Footer.jsx";
-import ChatBot from "./components/ChatBot.jsx";
+import ChatBot from "./components/ChatBotLoader.jsx";
 
 export default function App() {
   return (
