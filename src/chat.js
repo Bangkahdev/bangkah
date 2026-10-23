@@ -67,7 +67,7 @@ export const CHAT = {
         },
         {
           label: "DevOpsGen",
-          href: "https://github.com/Bangkahdev/DevOpsGen",
+          href: "https://devopsgen.bangkah.tech/",
           external: true,
         },
         {
@@ -134,7 +134,7 @@ export const CHAT = {
         },
         {
           label: "DevOpsGen",
-          href: "https://github.com/Bangkahdev/DevOpsGen",
+          href: "https://devopsgen.bangkah.tech/",
           external: true,
         },
         {

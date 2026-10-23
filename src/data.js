@@ -67,8 +67,8 @@ export const projects = [
     no: "RAK 05",
     kind: "CLI",
     name: "DevOpsGen",
-    url: "https://github.com/Bangkahdev/DevOpsGen",
-    display: "github.com/Bangkahdev/DevOpsGen",
+    url: "https://devopsgen.bangkah.tech/",
+    display: "devopsgen.bangkah.tech",
     description:
       "CLI scaffolding DevOps: menghasilkan Dockerfile, workflow GitHub Actions, dan manifest Kubernetes yang deterministik dari konfigurasi kecil.",
     tags: ["Go", "CLI", "CI/CD"],
