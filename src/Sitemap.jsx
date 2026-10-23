@@ -24,6 +24,7 @@ export default function Sitemap() {
               <li><a href="/#gudang">Gudang</a> — daftar rak project</li>
               <li><a href="/#cara-kerja">Cara kerja</a> — alur dari rakitan ke rilis</li>
               <li><a href="/#faq">FAQ</a> — pertanyaan umum soal project</li>
+              <li><a href="/catatan/">Catatan</a> — perubahan rak dan situs</li>
               <li><a href="/#kontak">Kontak</a> — surel dan kanal resmi</li>
               <li><a href="/peta-situs/">Peta situs</a> — halaman ini</li>
             </ul>
@@ -34,7 +35,7 @@ export default function Sitemap() {
             <ul>
               {projects.map((p) => (
                 <li key={p.name}>
-                  <a href={p.url} target="_blank" rel="noopener">{p.name}</a>
+                  <a href={`/rak/${p.slug}/`}>{p.name}</a>
                   {" — "}
                   {p.display}
                 </li>

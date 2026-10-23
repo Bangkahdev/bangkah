@@ -7,10 +7,11 @@ export default function Header() {
           BANGKAH<span>.TECH</span>
         </a>
         <nav aria-label="Navigasi utama">
-          <a href="#gudang">Gudang</a>
-          <a href="#cara-kerja">Cara kerja</a>
-          <a href="#faq">FAQ</a>
-          <a href="#kontak">Kontak</a>
+          <a href="/#gudang">Gudang</a>
+          <a href="/#cara-kerja">Cara kerja</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/catatan/">Catatan</a>
+          <a href="/#kontak">Kontak</a>
         </nav>
         <span className="live">
           <i />

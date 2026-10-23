@@ -2,12 +2,7 @@ import { projects } from "../data.js";
 
 function ProjectCard({ project }) {
   return (
-    <a
-      className={`card card--${project.theme}`}
-      href={project.url}
-      target="_blank"
-      rel="noopener external"
-    >
+    <a className={`card card--${project.theme}`} href={`/rak/${project.slug}/`}>
       <div className="card__top">
         <span className="card__no">{project.no}</span>
         <span className="card__kind">{project.kind}</span>
@@ -25,7 +20,7 @@ function ProjectCard({ project }) {
       </div>
       <div className="card__foot">
         <span className="url">{project.display}</span>
-        <span className="go">Buka →</span>
+        <span className="go">Detail →</span>
       </div>
     </a>
   );

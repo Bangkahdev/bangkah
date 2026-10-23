@@ -1,4 +1,5 @@
-import { SITE, projects } from "./data.js";
+import { SITE } from "./data.js";
+import { changelog } from "./changelog.js";
 
 const esc = (value) =>
   String(value)
@@ -10,23 +11,24 @@ const esc = (value) =>
 
 export function atomFeed() {
   const updated = new Date().toISOString();
+  const pageUrl = `${SITE.url}catatan/`;
 
-  const entries = projects
+  const entries = changelog
     .map(
-      (p) => `  <entry>
-    <title>${esc(`${p.no} — ${p.name}`)}</title>
-    <link href="${esc(p.url)}"/>
-    <id>${esc(p.url)}</id>
-    <updated>${updated}</updated>
-    <summary>${esc(p.description)}</summary>
-    <category term="${esc(p.kind)}"/>
+      (entry) => `  <entry>
+    <title>${esc(entry.title)}</title>
+    <link href="${esc(`${pageUrl}#${entry.id}`)}"/>
+    <id>${esc(`${pageUrl}#${entry.id}`)}</id>
+    <updated>${entry.date}T00:00:00+07:00</updated>
+    <summary>${esc(entry.description)}</summary>
+    <category term="Catatan"/>
   </entry>`,
     )
     .join("\n");
 
   return `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="id">
-  <title>${esc(`${SITE.name} — Rak publik`)}</title>
+  <title>${esc(`${SITE.name} — Catatan rilis`)}</title>
   <subtitle>${esc(SITE.description)}</subtitle>
   <link href="${SITE.url}feed.xml" rel="self"/>
   <link href="${SITE.url}"/>

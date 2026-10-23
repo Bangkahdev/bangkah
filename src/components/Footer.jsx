@@ -24,10 +24,11 @@ export default function Footer() {
           <nav className="foot__col" aria-labelledby="foot-nav">
             <h2 className="foot__title" id="foot-nav">Jelajahi</h2>
             <ul>
-              <li><a href="#gudang">Gudang</a></li>
-              <li><a href="#cara-kerja">Cara kerja</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#kontak">Kontak</a></li>
+              <li><a href="/#gudang">Gudang</a></li>
+              <li><a href="/#cara-kerja">Cara kerja</a></li>
+              <li><a href="/#faq">FAQ</a></li>
+              <li><a href="/catatan/">Catatan</a></li>
+              <li><a href="/#kontak">Kontak</a></li>
               <li><a href="/peta-situs/">Peta situs</a></li>
             </ul>
           </nav>
@@ -37,9 +38,7 @@ export default function Footer() {
             <ul>
               {projects.map((p) => (
                 <li key={p.name}>
-                  <a href={p.url} target="_blank" rel="noopener">
-                    {p.name}
-                  </a>
+                  <a href={`/rak/${p.slug}/`}>{p.name}</a>
                 </li>
               ))}
               <li><span className="foot__soon">Rak berikutnya — segera</span></li>

@@ -1,7 +1,8 @@
 import { SITE, projects, steps } from "./data.js";
 import { CHAT } from "./chat.js";
 
-const projectLine = (p) => `- [${p.name}](${p.url}): ${p.description}`;
+const projectLine = (p) =>
+  `- [${p.name}](${SITE.url}rak/${p.slug}/): ${p.description} — situs resmi: ${p.url}`;
 
 export function llmsText() {
   return `# ${SITE.name}
@@ -18,6 +19,7 @@ ${projects.map(projectLine).join("\n")}
 ## Halaman utama
 - [Beranda](${SITE.url}): daftar seluruh rak dan ringkasan gudang.
 - [Peta Situs](${SITE.url}peta-situs/): daftar halaman dan project publik.
+- [Catatan](${SITE.url}catatan/): catatan rilis dan perubahan rak.
 - [FAQ](${SITE.url}#faq): pertanyaan umum soal project, akses, dan pengelola.
 
 ## Cara kerja
@@ -41,10 +43,12 @@ export function llmsFullText() {
     .map(
       (p) => `### ${p.no} — ${p.name}
 - Jenis: ${p.kind}
-- URL: ${p.url}
+- Halaman: ${SITE.url}rak/${p.slug}/
+- URL resmi: ${p.url}
 - Domain: ${p.display}
 - Tag: ${p.tags.join(", ")}
-- Ringkasan: ${p.description}`,
+- Ringkasan: ${p.description}
+- Sorotan: ${p.highlights.join(" ")}`,
     )
     .join("\n\n");
 
@@ -80,6 +84,7 @@ ${faq}
 ## Halaman
 - Beranda: ${SITE.url}
 - Peta Situs: ${SITE.url}peta-situs/
+- Catatan: ${SITE.url}catatan/
 - FAQ: ${SITE.url}#faq
 - Kontak: ${SITE.url}#kontak
 

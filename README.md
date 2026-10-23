@@ -19,6 +19,8 @@ Situs ini bukan portfolio pribadi dan bukan toko. Ini tempat semua project publi
 
 Project dokumentasi punya subdomainnya sendiri. ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, dan DevOpsGen punya situs sendiri; netinfo lewat README repo, sementara Muslim Life adalah aplikasi yang bisa langsung dipakai.
 
+Setiap rak juga punya halaman detail di `https://bangkah.tech/rak/<slug>/`, lengkap dengan sorotan dan tautan resmi.
+
 ## Cara kerja
 
 Project tidak muncul tiba-tiba di rak. Semua lewat alur yang sama: **dirakit**, **diuji**, lalu **naik rak** saat sudah siap dipakai publik.
@@ -31,3 +33,4 @@ Pertanyaan, laporan bug, atau ajakan kolaborasi: **atha@bangkah.tech**
 
 - Situs: <https://bangkah.tech>
 - Peta situs: <https://bangkah.tech/peta-situs/>
+- Catatan rilis: <https://bangkah.tech/catatan/>
