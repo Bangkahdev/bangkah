@@ -23,6 +23,7 @@ export default function Sitemap() {
               <li><a href="/">Beranda</a> — gudang project publik</li>
               <li><a href="/#gudang">Gudang</a> — daftar rak project</li>
               <li><a href="/#cara-kerja">Cara kerja</a> — alur dari rakitan ke rilis</li>
+              <li><a href="/#faq">FAQ</a> — pertanyaan umum soal project</li>
               <li><a href="/#kontak">Kontak</a> — surel dan kanal resmi</li>
               <li><a href="/peta-situs/">Peta situs</a> — halaman ini</li>
             </ul>

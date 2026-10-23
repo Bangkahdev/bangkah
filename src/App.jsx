@@ -5,6 +5,7 @@ import Stats from "./components/Stats.jsx";
 import Projects from "./components/Projects.jsx";
 import Process from "./components/Process.jsx";
 import Contact from "./components/Contact.jsx";
+import Faq from "./components/Faq.jsx";
 import Footer from "./components/Footer.jsx";
 import ChatBot from "./components/ChatBot.jsx";
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stats />
         <Projects />
         <Process />
+        <Faq />
         <Contact />
       </main>
       <Footer />

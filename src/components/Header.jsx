@@ -9,6 +9,7 @@ export default function Header() {
         <nav aria-label="Navigasi utama">
           <a href="#gudang">Gudang</a>
           <a href="#cara-kerja">Cara kerja</a>
+          <a href="#faq">FAQ</a>
           <a href="#kontak">Kontak</a>
         </nav>
         <span className="live">

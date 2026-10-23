@@ -1,4 +1,5 @@
 import { SITE, projects } from "./data.js";
+import { CHAT } from "./chat.js";
 
 const keywords = SITE.keywords.join(", ");
 const shareTitle = "Bangkah — Gudang Project Publik & Alat Developer";
@@ -82,6 +83,20 @@ const jsonLd = {
           description: p.description,
           keywords: p.tags.join(", "),
           genre: p.kind,
+        },
+      })),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE.url}#faq`,
+      inLanguage: "id-ID",
+      isPartOf: { "@id": `${SITE.url}#website` },
+      mainEntity: CHAT.questions.map((q) => ({
+        "@type": "Question",
+        name: q.label,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: q.answer,
         },
       })),
     },
