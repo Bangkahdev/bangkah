@@ -147,7 +147,7 @@ export default function ChatBot() {
         className="bot__launcher"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label={open ? "Tutup obrolan" : "Buka obrolan bantuan"}
+        aria-label={open ? "Tutup — tutup obrolan bantuan" : "Tanya — buka obrolan bantuan"}
       >
         <span className="bot__icon" aria-hidden="true">{open ? "×" : "?"}</span>
         <span>{open ? "Tutup" : "Tanya"}</span>
