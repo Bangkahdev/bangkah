@@ -14,12 +14,40 @@ export default function ChatBot({ defaultOpen = false }) {
   const [thread, setThread] = useState([]);
   const bodyRef = useRef(null);
   const closeRef = useRef(null);
+  const panelRef = useRef(null);
+  const launcherRef = useRef(null);
+  const wasOpen = useRef(false);
+
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+      closeRef.current?.focus();
+      return;
+    }
+    if (wasOpen.current) {
+      wasOpen.current = false;
+      launcherRef.current?.focus();
+    }
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
-    closeRef.current?.focus();
     const onKey = (e) => {
       if (e.key === "Escape") setOpen(false);
+      if (e.key !== "Tab") return;
+      const focusable = panelRef.current?.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -55,8 +83,10 @@ export default function ChatBot({ defaultOpen = false }) {
         <section
           className="bot__panel"
           role="dialog"
+          aria-modal="true"
           aria-labelledby="bot-title"
           aria-describedby="bot-sub"
+          ref={panelRef}
         >
           <header className="bot__head">
             <div>
@@ -148,6 +178,7 @@ export default function ChatBot({ defaultOpen = false }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Tutup — tutup obrolan bantuan" : "Tanya — buka obrolan bantuan"}
+        ref={launcherRef}
       >
         <span className="bot__icon" aria-hidden="true">{open ? "×" : "?"}</span>
         <span>{open ? "Tutup" : "Tanya"}</span>
