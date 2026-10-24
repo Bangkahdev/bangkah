@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const links = [
   { href: "/#gudang", label: "Gudang" },
@@ -9,26 +9,18 @@ const links = [
 ];
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+  const headerRef = useRef(null);
   const toggleRef = useRef(null);
-  const navRef = useRef(null);
 
   useEffect(() => {
-    if (!open) return;
-
     const onKey = (event) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
+      if (event.key !== "Escape" || !toggleRef.current?.checked) return;
+      toggleRef.current.checked = false;
+      toggleRef.current.focus();
     };
     const onPointer = (event) => {
-      if (
-        !navRef.current?.contains(event.target) &&
-        !toggleRef.current?.contains(event.target)
-      ) {
-        setOpen(false);
-      }
+      if (!toggleRef.current?.checked) return;
+      if (!headerRef.current?.contains(event.target)) toggleRef.current.checked = false;
     };
 
     document.addEventListener("keydown", onKey);
@@ -37,39 +29,39 @@ export default function Header() {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("pointerdown", onPointer);
     };
-  }, [open]);
+  }, []);
 
   return (
-    <header className="top">
+    <header className="top" ref={headerRef}>
       <div className="top__inner">
         <a className="brand" href="/">
           <span className="brand__mark">B</span>
           BANGKAH<span>.TECH</span>
         </a>
 
-        <button
-          type="button"
-          className="top__toggle"
-          aria-expanded={open}
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          className="top__checkbox"
+          aria-label="Menu navigasi"
           aria-controls="nav-utama"
-          aria-label={open ? "Tutup menu navigasi" : "Buka menu navigasi"}
           ref={toggleRef}
-          onClick={() => setOpen((value) => !value)}
-        >
+        />
+        <label htmlFor="nav-toggle" className="top__toggle">
           <span className="top__toggle-lines" aria-hidden="true">
             <i />
             <i />
             <i />
           </span>
-        </button>
+        </label>
 
         <nav
           id="nav-utama"
-          ref={navRef}
-          className={open ? "is-open" : undefined}
           aria-label="Navigasi utama"
           onClick={(event) => {
-            if (event.target.closest("a")) setOpen(false);
+            if (event.target.closest("a") && toggleRef.current) {
+              toggleRef.current.checked = false;
+            }
           }}
         >
           {links.map((link) => (

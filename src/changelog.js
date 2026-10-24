@@ -1,5 +1,16 @@
 export const changelog = [
   {
+    id: "2026-10-24-menu-tanpa-js",
+    date: "2026-10-24",
+    title: "Menu mobile tanpa JavaScript dan FAQ dinamis",
+    description:
+      "Navigasi memakai kontrol checkbox native dan CSS sehingga tetap bisa dibuka di halaman rak, catatan, dan peta situs yang diprerender tanpa skrip. Angka dan daftar tautan FAQ kembali dihitung dari data project, bukan ditulis tangan.",
+    links: [
+      { label: "Beranda", href: "/" },
+      { label: "Peta situs", href: "/peta-situs/" },
+    ],
+  },
+  {
     id: "2026-10-24-faq-tunggal",
     date: "2026-10-24",
     title: "FAQ jadi satu kanal jawaban",
