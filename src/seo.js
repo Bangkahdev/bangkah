@@ -1,5 +1,5 @@
 import { SITE, projects } from "./data.js";
-import { CHAT } from "./chat.js";
+import { faq } from "./faq.js";
 import { changelog } from "./changelog.js";
 
 const keywords = SITE.keywords.join(", ");
@@ -104,7 +104,7 @@ const jsonLd = {
       "@id": `${SITE.url}#faq`,
       inLanguage: "id-ID",
       isPartOf: { "@id": `${SITE.url}#website` },
-      mainEntity: CHAT.questions.map((q) => ({
+      mainEntity: faq.map((q) => ({
         "@type": "Question",
         name: q.label,
         acceptedAnswer: {

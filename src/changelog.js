@@ -1,5 +1,16 @@
 export const changelog = [
   {
+    id: "2026-10-24-faq-tunggal",
+    date: "2026-10-24",
+    title: "FAQ jadi satu kanal jawaban",
+    description:
+      "Chatbot dihapus karena hanya menyajikan ulang sepuluh jawaban yang sama dengan FAQ. FAQ kini satu-satunya kanal jawaban: terbuka tanpa JavaScript, mudah dipindai mesin pencari, dan datanya tetap menjadi sumber JSON-LD serta llms.txt.",
+    links: [
+      { label: "FAQ", href: "/#faq" },
+      { label: "Beranda", href: "/" },
+    ],
+  },
+  {
     id: "2026-10-24-review-aksesibilitas",
     date: "2026-10-24",
     title: "Menu mobile, privasi analitik, dan cache aset",

@@ -1,5 +1,5 @@
 import { SITE, projects, steps } from "./data.js";
-import { CHAT } from "./chat.js";
+import { faq } from "./faq.js";
 
 const projectLine = (p) =>
   `- [${p.name}](${SITE.url}rak/${p.slug}/): ${p.description} — situs resmi: ${p.url}`;
@@ -52,7 +52,7 @@ export function llmsFullText() {
     )
     .join("\n\n");
 
-  const faq = CHAT.questions
+  const faqText = faq
     .map((q) => `### ${q.label}\n${q.answer}`)
     .join("\n\n");
 
@@ -80,7 +80,7 @@ ${projectDetails}
 ${steps.map((s) => `### ${s.phase} — ${s.title}\n${s.description}`).join("\n\n")}
 
 ## Tanya jawab
-${faq}
+${faqText}
 
 ## Halaman
 - Beranda: ${SITE.url}
