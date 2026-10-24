@@ -1,4 +1,4 @@
-import { CHAT } from "../chat.js";
+import { faq } from "../faq.js";
 
 export default function Faq() {
   return (
@@ -8,11 +8,11 @@ export default function Faq() {
           Tanya <em>jawab</em>
         </h2>
         <p>Pertanyaan yang paling sering muncul soal project dan pengelolanya.</p>
-        <span className="count">{CHAT.questions.length} jawaban</span>
+        <span className="count">{faq.length} jawaban</span>
       </div>
 
       <div className="faq">
-        {CHAT.questions.map((q) => (
+        {faq.map((q) => (
           <details className="faq__item" key={q.id}>
             <summary>{q.label}</summary>
             <div className="faq__body">

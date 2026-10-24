@@ -179,35 +179,6 @@ a.card:hover .card__foot .go { background: var(--ink); color: var(--card); }
 .copy:hover { border-color: var(--paper); }
 .hint { font-size: 11.5px; color: #c2bcae; margin-top: 10px; }
 
-/* chatbot */
-.bot { position: fixed; right: 18px; bottom: 18px; z-index: 70; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-.bot__launcher { display: inline-flex; align-items: center; gap: 9px; padding: 10px 14px; border: var(--line); background: var(--yellow); box-shadow: 3px 3px 0 var(--ink); font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: 0; cursor: pointer; }
-.bot__launcher:hover, .bot__launcher:focus-visible { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
-.bot__icon { display: grid; place-items: center; width: 22px; height: 22px; border: 2px solid var(--ink); background: var(--card); font-size: 13px; }
-.bot__panel { width: 384px; max-width: calc(100vw - 36px); max-height: min(560px, calc(100vh - 124px)); display: flex; flex-direction: column; border: var(--line); background: var(--card); box-shadow: var(--shadow); }
-.bot__head { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; border-bottom: var(--line); background: var(--yellow); }
-.bot__head h2 { margin: 0 0 3px; font-family: "Archivo Black", sans-serif; font-size: 15px; letter-spacing: -0.01em; text-transform: uppercase; }
-.bot__head p { margin: 0; font-size: 10.5px; line-height: 1.5; }
-.bot__close { margin-left: auto; flex: none; width: 26px; height: 26px; border: 2px solid var(--ink); background: var(--card); font-size: 15px; font-weight: 700; line-height: 1; cursor: pointer; }
-.bot__close:hover, .bot__close:focus-visible { background: var(--ink); color: var(--yellow); }
-.bot__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 14px; }
-.bot__thread { display: flex; flex-direction: column; gap: 10px; }
-.bot__msg { border: 2px solid var(--ink); padding: 9px 11px; font-size: 12.5px; line-height: 1.6; }
-.bot__msg p { margin: 0; }
-.bot__msg--bot { background: #fff; box-shadow: 3px 3px 0 #d9d2c0; }
-.bot__msg--user { align-self: flex-end; max-width: 88%; background: var(--ink); color: var(--paper); font-weight: 700; }
-.bot__links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
-.bot__links a { border: 2px solid var(--ink); background: var(--yellow); padding: 3px 7px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.03em; text-decoration: none; }
-.bot__links a:hover, .bot__links a:focus-visible { background: var(--ink); color: var(--yellow); }
-.bot__options { display: grid; gap: 6px; margin-top: 2px; padding-top: 11px; border-top: 2px dashed var(--ink); }
-.bot__label { margin: 0 0 2px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b6553; }
-.bot__opt { border: 2px solid var(--ink); background: var(--paper); padding: 8px 10px; font-family: inherit; font-size: 12px; font-weight: 700; text-align: left; cursor: pointer; }
-.bot__opt:hover, .bot__opt:focus-visible { background: var(--yellow); transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
-.bot__opt--ghost { border-style: dashed; background: transparent; font-weight: 400; }
-.bot__foot { margin-top: auto; padding: 10px 12px; border-top: var(--line); background: var(--paper); }
-.bot__mail { display: block; padding: 8px 10px; border: 2px solid var(--ink); background: var(--card); box-shadow: 3px 3px 0 var(--ink); font-size: 11.5px; font-weight: 700; line-height: 1.4; text-align: center; text-decoration: none; }
-.bot__mail:hover, .bot__mail:focus-visible { background: var(--yellow); }
-
 /* peta situs */
 .sm { padding: 44px 20px 20px; }
 .sm__inner { max-width: 980px; margin: 0 auto; }
@@ -318,8 +289,6 @@ footer { border-top: var(--line); margin-top: 60px; background: var(--ink); colo
   .hero h1 .outline { -webkit-text-stroke-width: 2px; }
   .foot__grid { grid-template-columns: 1fr; }
   .foot__bottom { flex-direction: column; align-items: flex-start; }
-  .bot { right: 12px; bottom: 12px; }
-  .bot__panel { width: calc(100vw - 24px); max-height: calc(100vh - 116px); }
   .log__item { grid-template-columns: 1fr; gap: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
