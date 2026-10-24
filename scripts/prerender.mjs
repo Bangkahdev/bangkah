@@ -65,10 +65,11 @@ for (const rack of racks) {
 }
 
 const latestDate = changelog[0]?.date || new Date().toISOString().slice(0, 10);
+const oldestDate = changelog.at(-1)?.date || latestDate;
 const rackLastMod = (slug) =>
   changelog.find((entry) =>
     entry.links?.some((link) => link.href === `/rak/${slug}/`),
-  )?.date || latestDate;
+  )?.date || oldestDate;
 
 const rackUrls = racks
   .map(

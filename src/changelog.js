@@ -1,5 +1,16 @@
 export const changelog = [
   {
+    id: "2026-10-24-review-aksesibilitas",
+    date: "2026-10-24",
+    title: "Menu mobile, privasi analitik, dan cache aset",
+    description:
+      "Menu navigasi untuk layar kecil, klaim privasi Cloudflare Web Analytics yang lebih tepat, angka statistik dari data project, cache aset ber-hash, dan lastmod sitemap dari catatan.",
+    links: [
+      { label: "Beranda", href: "/" },
+      { label: "Peta situs", href: "/peta-situs/" },
+    ],
+  },
+  {
     id: "2026-10-23-berkas-pencari",
     date: "2026-10-23",
     title: "Berkas SEO dan AI discovery",
