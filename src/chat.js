@@ -128,7 +128,7 @@ export const CHAT = {
       id: "privasi",
       label: "Ada pelacakan atau cookie?",
       answer:
-        "Tidak ada cookie iklan, analitik, atau pelacakan pihak ketiga. Obrolan ini berjalan di browser dan tidak menyimpan riwayat ke server.",
+        "Tidak ada cookie iklan atau pelacakan pihak ketiga. Situs memakai Cloudflare Web Analytics yang tidak memasang cookie; obrolan ini berjalan di browser dan tidak menyimpan riwayat ke server.",
       links: [{ label: "Kontak pengelola", href: "/#kontak" }],
       related: ["siapa", "kontak"],
     },

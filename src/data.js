@@ -162,10 +162,19 @@ export const projects = [
   },
 ];
 
+const hostedProjects = projects.filter((project) => project.kind !== "Paket AUR");
+const contactEntryPoints = [SITE.email].filter(Boolean).length;
+
 export const stats = [
-  { value: "07", label: "Rak publik" },
-  { value: "06", label: "Titik online" },
-  { value: "01", label: "Pintu masuk" },
+  { value: String(projects.length).padStart(2, "0"), label: "Rak publik" },
+  {
+    value: String(hostedProjects.length).padStart(2, "0"),
+    label: "Titik online",
+  },
+  {
+    value: String(contactEntryPoints).padStart(2, "0"),
+    label: "Pintu masuk",
+  },
   { value: "24/7", label: "Jam operasional" },
 ];
 

@@ -73,7 +73,7 @@ export default function Footer() {
         <div className="foot__bottom">
           <p>© 2026 Bangkah. Seluruh hak atas nama, logo, dan konten dilindungi.</p>
           <p>
-            {SITE.domain} · Muhammad Dhiyaul Atha
+            {SITE.domain} · {owner.name}
           </p>
         </div>
       </div>

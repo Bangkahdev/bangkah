@@ -2,7 +2,8 @@
 Name: Muhammad Dhyaul Atha
 Role: Pengelola Bangkah
 Contact: atha@bangkah.tech
-GitHub: https://github.com/Bangkahdev
+GitHub: https://github.com/Bangkah
+Org: https://github.com/Bangkahdev
 LinkedIn: https://www.linkedin.com/in/muhammad-dhyaul-atha/
 Location: Indonesia
 

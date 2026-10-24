@@ -2,6 +2,7 @@ import { build } from "esbuild";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { changelog } from "../src/changelog.js";
 
 const ROOT = process.cwd();
 const TMP_DIR = path.join(ROOT, ".prerender");
@@ -63,12 +64,18 @@ for (const rack of racks) {
   await writeFile(path.join(dir, "index.html"), inject(staticShell, rack), "utf8");
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const latestDate = changelog[0]?.date || new Date().toISOString().slice(0, 10);
+const oldestDate = changelog.at(-1)?.date || latestDate;
+const rackLastMod = (slug) =>
+  changelog.find((entry) =>
+    entry.links?.some((link) => link.href === `/rak/${slug}/`),
+  )?.date || oldestDate;
+
 const rackUrls = racks
   .map(
     (rack) => `  <url>
     <loc>https://bangkah.tech/rak/${rack.slug}/</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${rackLastMod(rack.slug)}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`,
@@ -78,20 +85,20 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bangkah.tech/</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${latestDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 ${rackUrls}
   <url>
     <loc>https://bangkah.tech/catatan/</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${latestDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bangkah.tech/peta-situs/</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${latestDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
