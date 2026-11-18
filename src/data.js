@@ -12,7 +12,7 @@ export const SITE = {
   },
   title: "Bangkah — Gudang Project Publik & Alat Developer | bangkah.tech",
   description:
-    "Gudang project publik Bangkah: ATHA Docs, Bangkah Launcher, Bangk-Shield, Fishing OS, DevOpsGen, Muslim Life, netinfo. Dokumentasi dan alat developer.",
+    "Gudang project publik Bangkah: Bangk-Shield, Fishing OS, DevOpsGen, ATHA, Bangkah Launcher, Muslim Life, netinfo, AegisCrypt, Hashcraft, dan Sentinel AI CLI.",
   keywords: [
     "Bangkah",
     "Muhammad Dhyaul Atha",
@@ -28,6 +28,11 @@ export const SITE = {
     "DevOpsGen",
     "Muslim Life",
     "netinfo",
+    "AegisCrypt",
+    "Hashcraft",
+    "Sentinel AI CLI",
+    "SHA-256",
+    "keamanan jaringan",
     "Arch Linux",
     "Laravel starter kit",
     "live ISO Arch Linux",
@@ -158,6 +163,57 @@ export const projects = [
       "Menampilkan IP publik, ASN, dan ISP lewat satu perintah.",
       "Ringan dan cocok untuk troubleshooting atau skrip.",
       "Tersedia sebagai paket AUR untuk Arch Linux.",
+    ],
+  },
+  {
+    no: "RAK 08",
+    kind: "Dokumentasi",
+    name: "AegisCrypt",
+    slug: "aegiscrypt",
+    url: "https://docs.aegiscrypt.bangkah.tech",
+    display: "docs.aegiscrypt.bangkah.tech",
+    description:
+      "Dokumentasi AegisCrypt: enkripsi file di browser dengan AES-256-GCM, dari format envelope sampai threat model.",
+    tags: ["Dokumentasi", "Keamanan", "AES-256-GCM"],
+    theme: "c",
+    highlights: [
+      "Enkripsi dan dekripsi file sepenuhnya di perangkat, tanpa upload.",
+      "AES-256-GCM dengan streaming envelope untuk file besar.",
+      "Dua faktor opsional: password + keyfile, plus recovery key.",
+    ],
+  },
+  {
+    no: "RAK 09",
+    kind: "Alat CLI",
+    name: "Hashcraft",
+    slug: "hashcraft",
+    url: "https://github.com/Bangkahdev/hashcraft",
+    display: "github.com/Bangkahdev/hashcraft",
+    description:
+      "CLI local-first untuk membuat kandidat string dari kata kunci dan memverifikasi digest SHA-256, tanpa telemetry atau API eksternal.",
+    tags: ["Keamanan", "Python", "SHA-256"],
+    theme: "e",
+    highlights: [
+      "Berjalan 100% lokal: tanpa telemetry, API eksternal, atau pengiriman kandidat.",
+      "Menghasilkan kandidat deterministik dan memverifikasi digest SHA-256.",
+      "Rilis v2.0.0 dengan CI, test, dan lisensi MIT.",
+    ],
+  },
+  {
+    no: "RAK 10",
+    kind: "Alat CLI",
+    name: "Sentinel AI CLI",
+    slug: "sentinel-ai-cli",
+    url: "https://pypi.org/project/sentinel-ai-cli/",
+    display: "pypi.org/project/sentinel-ai-cli",
+    description:
+      "CLI keamanan untuk Linux: memantau koneksi jaringan, menilai risiko, dan menjelaskan koneksi mencurigakan dari terminal.",
+    tags: ["Keamanan", "Python", "PyPI"],
+    theme: "g",
+    highlights: [
+      "Memantau koneksi aktif beserta proses yang memakainya.",
+      "Memberi skor risiko 0-100 dan level LOW, MEDIUM, atau HIGH.",
+      "Tersedia di PyPI sebagai paket sentinel-ai-cli versi 1.0.5.",
     ],
   },
 ];

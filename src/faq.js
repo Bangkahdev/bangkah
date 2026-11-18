@@ -85,7 +85,7 @@ export const faq = [
     id: "docs",
     label: "Di mana dokumentasinya?",
     answer:
-      "ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, dan DevOpsGen punya situs dokumentasi sendiri. netinfo didokumentasikan lewat README repo, sedangkan Muslim Life adalah aplikasi langsung pakai.",
+      "ATHA, Bangkah Launcher, Bangk-Shield, Fishing OS, DevOpsGen, dan AegisCrypt punya situs dokumentasi sendiri. netinfo tersedia lewat AUR, Hashcraft lewat rilis GitHub, Sentinel AI CLI lewat PyPI, dan Muslim Life adalah aplikasi langsung pakai.",
     links: docsLinks,
   },
   {
