@@ -1,5 +1,17 @@
 export const changelog = [
   {
+    id: "2026-11-18-tiga-rak-baru",
+    date: "2026-11-18",
+    title: "AegisCrypt, Hashcraft, dan Sentinel AI CLI naik rak",
+    description:
+      "Rak 08 menunjuk ke dokumentasi AegisCrypt, bukan repositori. Dua CLI keamanan baru masuk: Hashcraft untuk verifikasi digest SHA-256 dan Sentinel AI CLI untuk memantau koneksi jaringan dari terminal.",
+    links: [
+      { label: "AegisCrypt", href: "/rak/aegiscrypt/" },
+      { label: "Hashcraft", href: "/rak/hashcraft/" },
+      { label: "Sentinel AI CLI", href: "/rak/sentinel-ai-cli/" },
+    ],
+  },
+  {
     id: "2026-10-24-menu-tanpa-js",
     date: "2026-10-24",
     title: "Menu mobile tanpa JavaScript dan FAQ dinamis",
